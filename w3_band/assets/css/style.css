@@ -75,6 +75,7 @@ html{
     left: 0;
     right: 0;
     z-index: 1;
+    overflow: hidden;
 }
 #nav{
     display: inline-block;
@@ -123,6 +124,11 @@ html{
 #nav .nav-arrow-down{
     font-size: 12px;
 }
+#header .menu-btn{
+    display: none;
+}
+
+#header .menu-btn,
 #header .search-btn{
     float: right;
     height: 46px;
@@ -133,6 +139,14 @@ html{
     cursor: pointer;
     background-color: #f44336;
 }
+#header .menu-btn:hover{
+    background-color: #ccc;
+}
+#header .menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
     font-size: 16px;
@@ -167,6 +181,7 @@ html{
 }
 #content .section-content{
     width: 800px;
+    max-width: 100%;
     padding: 64px 16px 112px;
     margin: auto;
 }

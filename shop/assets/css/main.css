@@ -11,8 +11,93 @@
     list-style: none;
     padding-left: 0;
     margin: 4px 0 0;
-
+    display: flex;
 }
+
+.navbar__item.navbar__user {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar__user-img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #F5422D;
+}
+
+.navbar__user-name {
+    margin-left: 4px;
+    font-size: 1.4;
+    font-weight: 400;
+}
+
+.navbar__user:hover .navbar__user-menu {
+    display: block;
+}
+
+.navbar__user-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right:0;
+    list-style: none;
+    width: 145px;
+    background-color: var(--white-color);
+    padding-left: 0;
+    z-index: 1;
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 2px;
+    display: none;
+    animation: FadeIn linear 0.3s;
+}
+
+.navbar__user-menu::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -30px;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    cursor: pointer;
+}
+
+.navbar__user-menu::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    height: 12px;
+    width: 54%;
+}
+.navbar__user-item--separate {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navbar__user-item a {
+    width: 100%;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+.navbar__user-item a:hover {
+    background-color: #fafafa;
+}
+
+.navbar__user-item a:first-child{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.navbar__user-item a:last-child{
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
 .navbar__item{
     margin: 0 8px;
     position: relative;
@@ -31,7 +116,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 300;
-    display: inline-block;   
+    display:flex;   
 }
 .navbar__item:hover, .navbar__item-link:hover, .navbar__icon-link:hover{
     color: rgba(255, 255, 255, 0.7);
@@ -53,6 +138,10 @@
 }
 .navbar__icon-link{
     color: var(--white-color);
+}
+
+.navbar__icon-link:nth-child(2){
+    margin-left: 3px;
 }
 
 .navbar-icon{
@@ -97,12 +186,14 @@
 
 .navbar__notify{
     position: absolute;
+    z-index: 1;
     top: 118%;
     right: 0;
     width: 404px;
+    border-radius: 2px;
     border: 1px solid #d3d3d3;
     background-color: var(--white-color);
-    transform-origin: calc(100% - 20px) top;
+    transform-origin: calc(100% - 32px) top;
     animation: NavbarNotifyGrowth .2s ease-in;
     display: none;
 }
@@ -346,6 +437,11 @@
 
 .header__logo{
     width: 200px;
+}
+
+.header__logo-link{
+    color: transparent;
+    text-decoration: none;
 }
 
 .header__logo-img {
@@ -613,7 +709,7 @@
 
 .header__search-select-option {
     position: absolute;
-    top: 196%;
+    top: calc(100% + 14px);
     right: 0;
     list-style: none;
     width: 130px;
